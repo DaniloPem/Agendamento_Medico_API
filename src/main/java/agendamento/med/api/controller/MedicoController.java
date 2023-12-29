@@ -1,9 +1,6 @@
 package agendamento.med.api.controller;
 
-import agendamento.med.api.medico.DadosCadastroMedico;
-import agendamento.med.api.medico.DadosListagemMedico;
-import agendamento.med.api.medico.Medico;
-import agendamento.med.api.medico.MedicoRepository;
+import agendamento.med.api.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +26,17 @@ public class MedicoController {
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemMedico::new);
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
+    }
+
+   // @DeleteMapping("/{id}")
+   // @Transactional
+   // public void excluir(@PathVariable Long id) {
+   //     repository.deleteById(id);
+   // }
 }
