@@ -1,4 +1,4 @@
-package agendamento.med.api.medico;
+package agendamento.med.api.domain.medico;
 
 public record DadosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade) {
 

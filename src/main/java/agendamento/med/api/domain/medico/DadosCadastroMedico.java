@@ -1,6 +1,6 @@
-package agendamento.med.api.medico;
+package agendamento.med.api.domain.medico;
 
-import agendamento.med.api.endereco.DadosEndereco;
+import agendamento.med.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

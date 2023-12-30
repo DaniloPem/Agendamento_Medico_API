@@ -1,13 +1,11 @@
-package agendamento.med.api.medico;
+package agendamento.med.api.domain.medico;
 
-import agendamento.med.api.endereco.Endereco;
+import agendamento.med.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.annotation.processing.Generated;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")

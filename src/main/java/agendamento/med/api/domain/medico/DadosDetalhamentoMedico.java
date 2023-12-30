@@ -1,6 +1,6 @@
-package agendamento.med.api.medico;
+package agendamento.med.api.domain.medico;
 
-import agendamento.med.api.endereco.Endereco;
+import agendamento.med.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String email, String crm, String telefone, Especialidade especialidade, Endereco endereco) {
     public DadosDetalhamentoMedico (Medico medico) {

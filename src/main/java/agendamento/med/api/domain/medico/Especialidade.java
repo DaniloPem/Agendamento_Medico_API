@@ -1,4 +1,4 @@
-package agendamento.med.api.medico;
+package agendamento.med.api.domain.medico;
 
 public enum Especialidade {
     ORTOPEDIA,

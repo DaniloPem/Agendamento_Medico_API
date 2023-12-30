@@ -1,4 +1,4 @@
-package agendamento.med.api.endereco;
+package agendamento.med.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
