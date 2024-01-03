@@ -1,4 +1,4 @@
-package agendamento.med.api.infra;
+package agendamento.med.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
