@@ -2,11 +2,12 @@ package agendamento.med.api.domain.consulta.validacoes;
 
 import agendamento.med.api.domain.consulta.DadosAgendamentoConsulta;
 import agendamento.med.api.domain.consulta.ValidacaoException;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-
-public class ValidadorHorarioAntecedencia {
+@Component
+public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsulta{
     public void validar(DadosAgendamentoConsulta dados) {
         var dataConsulta = dados.data();
         var agora = LocalDateTime.now();

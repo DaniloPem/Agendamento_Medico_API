@@ -3,8 +3,12 @@ package agendamento.med.api.domain.consulta.validacoes;
 import agendamento.med.api.domain.consulta.DadosAgendamentoConsulta;
 import agendamento.med.api.domain.consulta.ValidacaoException;
 import agendamento.med.api.domain.medico.MedicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class ValidadorMedicoAtivo {
+@Component
+public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta {
+    @Autowired
     private MedicoRepository repository;
     public void validar(DadosAgendamentoConsulta dados) {
         if(dados.idMedico() == null) {
