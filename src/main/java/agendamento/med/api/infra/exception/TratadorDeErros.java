@@ -1,5 +1,6 @@
 package agendamento.med.api.infra.exception;
 
+import agendamento.med.api.domain.consulta.ValidacaoException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -21,6 +22,11 @@ public class TratadorDeErros {
         var erros = ex.getFieldErrors();
 
         return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
+    }
+
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity tratarErro400(ValidacaoException ex) {
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 
     //código omitido

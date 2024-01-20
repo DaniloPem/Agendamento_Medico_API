@@ -33,5 +33,5 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             where
             m.id = :id
             """)
-    boolean findAtivoById(Long idMedico);
+    boolean findAtivoById(Long id);
 }
